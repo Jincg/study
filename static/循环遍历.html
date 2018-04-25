@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+//for循环是最常用，最原始的循环，只能循环数组：
+/*			for(var i=0;i<a.length;i++){
+				var x=a[i];
+				alert(x)
+			}*/
+
+//forEach是javascript5引入的,array.forEach(function(元素，索引，本身)),但不能中断循环：
+/*			a.forEach(function(element,index){
+				alert(element);
+			});*/
+
+//for in循环可以循环对象和数组，返回的分别是对象的属性和数组的索引：
+/*			var b = {x:1,y:2,z:3};
+			for(var i in b){
+				alert(i) //x y z
+			}*/
+/*			var b = [1,2,3,5];
+			for(var i in b){
+				alert(typeof i)//string
+			}*/
+
+//for of 是ES6引入的新标准，可以循环很多：
+/*			var a=['a','b','c'];
+			for(var x of a){
+				alert(x)
+			}*/
+
+/*			let iterable = "boo";
+			for (let value of iterable) {
+				alert(value);
+			}*/
+
+
+/*			let iterable = new Map([["a", 1], ["b", 2], ["c", 3]]);
+			for (let [key, value] of iterable) {
+				console.log(value);
+			}*/
+			// 1
+			// 2
+			// 3
+
+
+//			for (let entry of iterable) {
+//				console.log(entry);
+//			}
+//			// [a, 1]
+//			// [b, 2]
+//			// [c, 3]
+
+//			let iterable = new Set([1, 1, 2, 2, 3, 3]);
+//			for (let value of iterable) {
+//				console.log(value);
+//			}
+//			// 1
+//			// 2
+//			// 3
+
+
+//循环一个DOM collection：
+/*			let articleParagraphs = document.querySelectorAll("article > p");
+			for (let paragraph of articleParagraphs) {
+				paragraph.classList.add("read");
+			}*/
+
+		</script>
+	</body>
+</html>

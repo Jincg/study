@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <script>
+        //编写一个函数，去除数组中的重复项：
+            function remove(arr){
+                var n = [];
+                for(var i = 0;i<arr.length;i++){
+                   if(n.indexOf(arr[i])==-1){
+                       n.push(arr[i]);
+                   }
+                }
+                return n;
+            }
+        document.write(remove([1,2,3,4,5,11,6,1,2,3]))
+    </script>
+    </body>
+</html>

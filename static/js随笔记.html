@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+/*			if(1/3==(1-2/3)){
+				alert("haha")
+			}
+			else{
+				alert("nn")
+			}*/
+
+//			var a=1-2/3;
+//			alert(a);
+//			alert(1/3);
+//			var c=4==true;
+//          alert(c);
+//            alert(Boolean("2"));
+//
+//         检测数据类型
+//			 var d=Object.prototype.toString.apply(null)==="[object Null]";
+//			 alert(d);
+//			 var e=[1,2]instanceof Array;
+//			 alert(e);
+//
+//	逗号运算符规则：
+//			 var o={x:1,y:2};
+//			 alert(o.x);
+//			 var val=(1*3,2,9*21);
+//			 alert(val);
+			 
+/*	 delete失效的方法
+			 var obj={x:1,y:2,z:3};
+			 Object.defineProperty(obj,'x',{
+			 	configurable:false,
+			 	value:1
+			 })
+			 delete obj.y;
+			 alert(obj.y);*/
+			
+			
+/*	new创建对象,原型链具有继承性,hasownproperty检测是否是本身属性
+			 function foo(){}
+			 foo.prototype.z=3;
+			 var obj=new foo();
+			 obj.x=1;
+			 obj.y=2;
+			 document.write(obj.x+"<br />");
+			 document.write(obj.y+"<br />");
+			 document.write(obj.z);
+			 alert(typeof obj.toString);
+			 alert("z"in obj);
+			 alert(obj.hasOwnProperty("z"));*/
+			
+			
+/*	即，Fn是一个函数，fn对象是从Fn函数new出来的，这样fn对象就可以调用Fn.prototype中的属性。但fn没有prototype属性，只有_proto_
+	因为每个对象都有一个隐藏的属性“__proto__”，这个属性引用了创建这个对象的函数的prototype。即：fn.__proto__ === Fn.prototype
+	这里的"__proto__"成为“隐式原型”*/
+/*			function Fn(){}
+			Fn.prototype.name="jin";
+			Fn.prototype.school="ss";
+			var fn=new Fn();
+			alert(Fn.prototype);*/
+			
+			
+/*			function Fn(){}
+			Fn.prototype.name="jin";
+			Fn.prototype.school="ss";
+			var fn1=new Fn();
+			var fn2=Fn;
+			alert(typeof(fn1));//object 
+			alert(fn1 instanceof Function)//false
+			alert(fn1 instanceof Fn)//true
+			alert(typeof (fn2));//function
+	fn1是函数Fn() new出来的对象,具有_proto属性_,而fn2是将函数Fn赋值给fn2,不属于对象?*/
+			
+			
+/*	Instanceof运算符的第一个变量是一个对象，暂时称为A；第二个变量一般是一个函数，暂时称为B。
+	Instanceof的判断队则是：沿着A的__proto__这条线来找，同时沿着B的prototype这条线来找，
+	如果两条线能找到同一个引用，即同一个对象，那么就返回true。如果找到终点还未重合，则返回false。
+			function foo(){}
+			var fo= new foo()
+			alert(fo instanceof foo)
+			alert(fo instanceof Object)*/
+			
+/*			if后只有一条语句可省略{}；
+				function moveOn(){
+				var answer=confirm("准备好了吗？")
+				if(answer) window.location="http://www.baidu.com";
+			}
+			setTimeout(moveOn,2000);*/
+
+//    获取第一个字符：
+//            var a="Hello javascript,I love JavaScript";
+//            alert(a.charAt(0));
+//    获取最后一个字符：
+//            alert(a.charAt(a.length-1));
+//    最后三个字符：
+//              alert(a.slice(-3));
+//            字符l首次出现的位置：
+//            alert(a.indexOf("l"));
+//            字符l在第三个位置之后出现的位置：
+//            alert(a.indexOf("l",4));
+//            字符l最后出现的位置：
+//            alert(a.lastIndexOf("l"));
+
+
+/*            !==和!=的区别:!==是===的非形式,不会隐式转换,比较值和类型；!=是==的非形式,会先
+       隐式转换再比较值；*/
+//              var a=3;
+//              var b="3";
+//            alert(a!=b);
+//            alert(a!==b);
+
+
+//原始值（即数字，字符串，布尔，null，undefined）是任何方法都不可将其更改的
+// (字符串通过索引更改返回新的值，原值不变)，但对象的值可改变
+//            var s="hello";
+//            alert( s.toUpperCase()); 返回HELLO
+//            alert(s); 依旧hello
+
+
+
+//对象的比较：即使两个对象包含相同的属性和值，数组（即使两个孔数组）相同索引完全相等，
+// 但对象，数组不相等。
+/*            var a={x:1},b={x:1},c=[1,2],d=[1,2]
+            alert(a==b);
+            alert(c==d);*/
+
+
+// null==undefined,但是null===undefined返回false
+//            var a=null;
+//			var b=undefined;
+//			alert(a==b);
+
+//			event.stopPropagation()   阻止冒泡行为
+//          preventDefault()          阻止事件的默认行为
+
+
+
+
+		</script>
+	</body>
+</html>

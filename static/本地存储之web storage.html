@@ -1,0 +1,92 @@
+
+
+    <!DOCTYPE html>  
+    <html lang="en">  
+    <head>  
+        <meta charset="UTF-8">  
+        <title>HTML本地存储之web storage</title>  
+        <style type="text/css">  
+            #content{   
+                border: 1px solid #3D19DD;   
+                width:600px;   
+                text-align:center;   
+                padding: 10px 0;   
+                margin: 0 auto;   
+            }   
+            #content input{   
+                margin-top: 10px;   
+            }   
+        </style>  
+    </head>  
+    <body>  
+        <div id="content">  
+             <label for="user_num">学号：</label>     
+            <input type="text" id="user_num" name="user_num" />  
+            <br/>  
+            <label for="user_name">姓名：</label>     
+            <input type="text" id="user_name" name="user_name" />     
+            <br/>     
+            <label for="grade">年级：</label>     
+            <input type="text" id="grade" name="grade"/>     
+            <br/>     
+            <label for="sex">性别：</label>     
+            <input type="text" id="sex" name="sex"/>     
+            <br/>    
+            <input type="button" onclick="save()" value="添加名单"/>     
+            <hr/>     
+            <label for="search_num">输入学号：</label>     
+            <input type="text" id="search_num" name="search_num"/>     
+            <input type="button" onclick="find()" value="查找学生信息"/>     
+            <p id="find_result"><br/></p>  
+            <hr/>  
+             <input type="button" onclick="show()" value="显示所有">
+             <input type="button" onclick="clearAll()" value="清除所有">
+             <div id="list">     
+             </div>    
+        </div>     
+        <br />  
+        <script type="text/javascript">  
+        function save(){     
+        var user_num = document.getElementById("user_num").value;   
+        var user_nameElement = document.getElementById("user_name").value;   
+        var gradeElement = document.getElementById("grade").value;     
+        var sexElement = document.getElementById("sex").value;   
+        var msg = {   
+            user_name: user_nameElement,   
+            grade: gradeElement,   
+            sex: sexElement
+        };    
+        localStorage.setItem(user_num,JSON.stringify(msg));     
+    }
+        function find(){     
+        var user_num = document.getElementById("search_num").value;    
+        var str = localStorage.getItem(user_num);    
+        var msg = JSON.parse(str);    
+        var find_result = document.getElementById("find_result");     
+        find_result.innerHTML = "学号为："+user_num+"的基本信息： 姓名："+msg.user_name + "，年级：" + msg.grade+",性别："+msg.sex;     
+    }    
+        function show(){     
+        var list = document.getElementById("list");     
+        if(localStorage.length>0){     
+            var result = "<table border='1' style='width:300px; margin:0 auto;'>";     
+            result += "<tr><td>学号</td><td>姓名</td><td>年级</td><td>性别</td></tr>";     
+            for(var i=0;i<localStorage.length;i++){     
+                var user_num = localStorage.key(i);     
+                var str = localStorage.getItem(user_num);     
+                var msg = JSON.parse(str);     
+                result += "<tr><td>"+user_num+"</td><td>"+msg.user_name+"</td><td>"+msg.grade+"</td><td>"+msg.sex+"</td></tr>";     
+            }     
+            result += "</table>";     
+            list.innerHTML = result;     
+          }else{     
+                list.innerHTML = "当前还没有数据";     
+          }     
+    }
+        function clearAll(){
+        	localStorage.clear();	
+        }
+        </script>
+    </body>  
+    </html>  
+
+

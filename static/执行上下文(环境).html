@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <script>
+//解释：在执行代码之前，把将要用到的所有的变量都事先拿出来，
+//      有的直接赋值了，有的先用undefined占个空.
+
+//变量声明提前,但不会赋值
+//        var a="gold";
+//        function  f(){
+//            alert(a);  结果为undefined
+//            var a="local";
+//            alert(a);  结果为local
+//        }
+//        f();
+
+//函数声明会声明提前并赋值，但函数表达式值只声明提前：
+//        console.log(f1);              输出function f1() {}
+//        function f1() {}              函数声明
+//        console .log(f2);             输出undefined
+//        var f2=function () {}         函数表达式
+
+//我们总结一下，在“准备工作”中完成了哪些工作：
+//      1.变量、函数表达式——变量声明，默认赋值为undefined；
+//      2.this——赋值；
+//      3.函数声明——赋值；
+//这三种数据的准备情况我们称之为“执行上下文”或者“执行上下文环境”。
+    </script>
+    </body>
+</html>
